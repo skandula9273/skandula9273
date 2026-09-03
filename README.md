@@ -1,22 +1,26 @@
 # Santosh Kandula
 
-Applied ML — LLM retrieval and evaluation, computer vision. CS junior at UNC Chapel Hill, class of 2027.
+Applied ML — retrieval and ranking systems, and the evaluation that decides what ships.
+CS senior at UNC Chapel Hill, graduating May 2027.
 
-I build systems with eval harnesses attached and publish what the harness catches, including
-the times it caught me overstating a result.
+Most of what I build comes in two parts: the system, and the harness that tells me whether
+the system actually works. The second part is usually where the interesting result is.
 
-**Now**
+**Now:** extending the SEC retrieval eval from offline to online — interleaving two rankers
+on live queries, because passing a merge gate isn't the same as being better in production.
 
-- **[sec-rag-eval](https://github.com/skandula9273/sec-rag-eval)** — retrieval QA over SEC filings
-  and the platform that measures it. recall@5 0.44 → 0.64 on FinanceBench-150. Scoring the identical
-  retrieval three ways gives 0.09, 0.64, and 0.81, which is why the harness matters more than the
-  number. [Live demo](https://sec-rag-web-200217758117.us-east1.run.app)
-- **[hoopvec](https://github.com/skandula9273/nba-broadcast-tracking)** — player tracking from NBA
-  broadcast video plus a play-embedding model, built to measure how much retrieval degrades on
-  reconstructed tracking. HOTA 0.301 → 0.525. Identity switches, not per-frame perception, are what
-  break downstream analytics.
+**Shipped:**
 
-**Stack** — Python · PyTorch · TensorFlow · FastAPI · PostgreSQL/pgvector · FAISS · YOLOv8 ·
-ByteTrack · ONNX · Docker · GCP Cloud Run · AWS Bedrock
+- **[sec-rag-eval](https://github.com/skandula9273/sec-rag-eval)** — retrieval and ranking
+  over SEC filings, ~10,400 companies, live. recall@5 0.44 → 0.64 on FinanceBench-150.
+  Table questions went 0.32 → 0.70, which was the weakness I published first. CI blocks any
+  merge that drops search quality.
 
-**Reach me** — [LinkedIn](https://www.linkedin.com/in/santoshkandula/) · skandula9273@gmail.com
+- **[nba-broadcast-tracking](https://github.com/skandula9273/nba-broadcast-tracking)** —
+  multi-object tracking from broadcast video. HOTA 0.301 → 0.525. I injected each perception
+  error class separately to find which one actually mattered — it was ID switches, not
+  homography or detection noise.
+
+**Stack:** Python · PyTorch · pgvector · FAISS · FastAPI · GCP Cloud Run · ONNX · Docker
+
+[santoshkandula.dev](https://santoshkandula.dev) · [LinkedIn](https://linkedin.com/in/santosh-kandula) · skandula9273@gmail.com
