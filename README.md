@@ -16,7 +16,7 @@ on live queries, because passing a merge gate isn't the same as being better in 
   Table questions went 0.32 → 0.70, which was the weakness I published first. CI blocks any
   merge that drops search quality.
 
-- **[nba-broadcast-tracking](https://github.com/skandula9273/nba-broadcast-tracking)** —
+- **[hoopvec](https://github.com/skandula9273/nba-broadcast-tracking)** —
   multi-object tracking from broadcast video. HOTA 0.301 → 0.525. I injected each perception
   error class separately to find which one actually mattered — it was ID switches, not
   homography or detection noise.
